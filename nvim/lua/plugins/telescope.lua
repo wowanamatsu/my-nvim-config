@@ -3,7 +3,7 @@
 return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
-  lazy = false, -- Garante carregamento imediato
+  --lazy = false, -- Garante carregamento imediato
   cmd = 'Telescope', 
 
   dependencies = {
