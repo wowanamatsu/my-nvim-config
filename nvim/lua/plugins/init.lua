@@ -83,6 +83,8 @@ local plugins = {
       require('plugins.configs.cmp')
     end,
   },
+  
+  require('plugins.telescope'),
 }
 
 -- Configuração e inicialização do Lazy.nvim
