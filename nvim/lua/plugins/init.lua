@@ -32,7 +32,36 @@ local plugins = {
   },
 
   -- 2. Cores/Temas
-  { 'folke/tokyonight.nvim', name = 'tokyonight', priority = 1000 },
+  {
+    'folke/tokyonight.nvim',
+    name = 'tokyonight',
+    priority = 1000,
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = 'transparent', -- Torna barras laterais transparentes (ex: nvim-tree)
+        floats = 'transparent',   -- Torna janelas flutuantes transparentes (ex: pop-ups do LSP)
+      },
+    }
+  },
+
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
+
+  -- 4. Barra de Status
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }, -- Necessário para ícones
+    event = 'VeryLazy', -- Carrega tarde, pois não é crucial para a inicialização
+    config = function()
+      require('lualine').setup({
+        -- A configuração principal será inserida aqui!
+      })
+    end,
+  },
 
   -- 3. Melhoria de Sintaxe/Parsing
   'nvim-treesitter/nvim-treesitter',
@@ -83,7 +112,7 @@ local plugins = {
       require('plugins.configs.cmp')
     end,
   },
-  
+
   require('plugins.telescope'),
 }
 
