@@ -39,6 +39,8 @@ map('n', '<A-Up>', ':m .-2<CR>==', { desc = 'Mover linha para cima' })
 map('v', '<A-Down>', ":m '>+1<CR>gv=gv", { desc = 'Mover seleção para baixo' })
 map('v', '<A-Up>', ":m '<-2<CR>gv=gv", { desc = 'Mover seleção para cima' })
 
-
+-- Mover entre tabs do editor
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Mover para a janela à esquerda' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Mover para a janela à direita' })
 
 
